@@ -1,0 +1,26 @@
+jwt:
+  secret: "0F1E2D3C4B5B6C7D8E9F0FA112B3456789ABCDEF0123456789ABCDEF"
+  tokenExpirationTime: 3m
+  refreshTokenExpirationTime: 30m
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema: app_security
+      connection-init-sql: CREATE SCHEMA IF NOT EXISTS app_security
+      connection-timeout: 10000
